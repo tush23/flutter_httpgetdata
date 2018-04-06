@@ -60,7 +60,6 @@ import 'package:http/http.dart' as http;
                       child: new Row(
                         children: <Widget>[
                           new Container(
-                                fontStyle: FontStyle.normal,fontWeight: FontWeight.bold,fontSize: 15.0),
                            child:
                             new CircleAvatar(
                               backgroundImage: new NetworkImage(data[index]['picture']),
