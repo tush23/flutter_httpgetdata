@@ -17,7 +17,7 @@ import 'package:http/http.dart' as http;
 
   class _HomePageState extends State<HomePage> {
 
-   final String url = "http://www.json-generator.com/api/json/get/bQhGkvAXyq?indent=2";
+   final String url = "http://www.json-generator.com/api/json/get/cjLmMWYhLm?indent=2";
    List data;
 
    @override
@@ -57,23 +57,33 @@ import 'package:http/http.dart' as http;
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     new Card(
-                      child: new Column(
+                      child: new Row(
                         children: <Widget>[
                           new Container(
-                            child: new Text("Name:"+data[index]['name'],style: new TextStyle(
                                 fontStyle: FontStyle.normal,fontWeight: FontWeight.bold,fontSize: 15.0),
-                              ),
+                           child:
+                            new CircleAvatar(
+                              backgroundImage: new NetworkImage(data[index]['picture']),
+                             // child: new Text(data[index]['name'][0])
+                            ),
+                            margin: const EdgeInsets.all(20.0),
                           ),
                           new Container(
-                            child: new Text("Username:"+data[index]['username'],style: new TextStyle(
-                            fontStyle: FontStyle.italic
+                            child:
+                            new Column(
+                              children: <Widget>[
+                                new Container(
+                                  child: new Text(data[index]['name'],style: new TextStyle(
+                                      fontStyle: FontStyle.normal,fontWeight: FontWeight.bold,fontSize: 15.0,),
+                                  ),
+                                ),
+                                new Container(
+                                  child: new Text("Website:"+data[index]['website'],style: new TextStyle(
+                                      fontStyle: FontStyle.italic
+                                  ),),
+                                )
+                              ],
                             ),
-                            ),
-                          ),
-                          new Container(
-                            child: new Text("Website:"+data[index]['website'],style: new TextStyle(
-                              fontStyle: FontStyle.italic
-                            ),),
                           )
                         ],
                       ),
