@@ -76,8 +76,9 @@ import 'package:http/http.dart' as http;
                                       fontStyle: FontStyle.normal,fontWeight: FontWeight.bold,fontSize: 15.0,),
                                   ),
                                 ),
+                                new Padding(padding: const EdgeInsets.only(bottom: 5.0)),
                                 new Container(
-                                  child: new Text("Website:"+data[index]['website'],style: new TextStyle(
+                                  child: new Text(data[index]['username'],style: new TextStyle(
                                       fontStyle: FontStyle.italic
                                   ),),
                                 )
